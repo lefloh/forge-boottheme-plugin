@@ -37,4 +37,12 @@ public class BootthemePluginTest extends AbstractBaseTest {
 		getShell().execute("boottheme update");
 	}
 	
+	@Test
+	public void testVersions() throws Exception {
+		initializeProject(PackagingType.WAR);
+		queueInputLines("y");
+		getShell().execute("boottheme setup");
+		getShell().execute("boottheme versions");
+	}
+	
 }

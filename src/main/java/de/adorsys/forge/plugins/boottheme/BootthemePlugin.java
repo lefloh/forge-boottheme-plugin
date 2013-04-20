@@ -15,9 +15,14 @@
  */
 package de.adorsys.forge.plugins.boottheme;
 
+import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.jboss.forge.project.Project;
 import org.jboss.forge.project.facets.WebResourceFacet;
@@ -84,5 +89,26 @@ public class BootthemePlugin implements Plugin {
 		}
 		fetcher.fetch(resourceId);
 	}	
+	
+	@Command(value = "versions", help = "shows the versions of the used resources")
+	public void versions() {
+		Pattern pattern = Pattern.compile("(?!\\.)(\\d+(\\.\\d+)+)(?![\\d\\.])");
+		File webresources = project.getFacet(WebResourceFacet.class).getWebRootDirectory().getUnderlyingResourceObject();
+		StringBuilder versions = new StringBuilder("Using Versions:\n");
+		for (File file : new File(webresources, "resources/theme/js").listFiles()) {
+			try {
+				String content = IOUtils.toString(file.toURI().toURL());
+				Matcher matcher = pattern.matcher(content);
+				if (matcher.find()) {
+					String lib = file.getName().split("\\.")[0];
+					String version = matcher.group(1);
+					versions.append(String.format("* %s: %s\n", lib, version));
+				}
+			} catch (Exception ex) {
+				MsgHandler.error(shell, "Could not parse Versions", ex);
+			}
+		}
+		MsgHandler.info(shell, versions.toString());
+	}
 	
 }

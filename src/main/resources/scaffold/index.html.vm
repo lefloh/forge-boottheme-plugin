@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+	<title>${title}</title>
+	<!-- 
+		the compiled css - production-mode
+    	<link href="resources/theme/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    -->
+    <!--
+    	compile the css via lessjs - dev-mode
+    -->
+    	<link href="resources/theme/less/main.less" rel="stylesheet/less" type="text/css" />
+    
+    <!--[if lt IE 9]>
+    	<script src="resources/theme/js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="#" class="brand">${title}</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="well">
+		<h1>${title} Theme</h1>
+		<p class="lead">${description}</p>
+		TODO
+		* exclude empty or find useful description
+		* run Python simple http server or mvn tomcat:run
+	</div>
+	
+    <script src="resources/theme/js/jquery.min.js"></script>
+    <!-- you won't need the less.min.js in production -->
+    <script src="resources/theme/js/less.min.js"></script>
+    <script src="resources/theme/js/bootstrap.min.js"></script>
+</body>
+</html>	

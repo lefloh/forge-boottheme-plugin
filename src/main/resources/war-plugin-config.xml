@@ -1,0 +1,11 @@
+<configuration>
+	<webResources>
+		<resource>
+			<excludes>
+				<exlude>**/less.min.js</exlude>
+				<exlude>**/*.less</exlude>
+				<exlude>**/index.html</exlude>
+			</excludes>
+		</resource>
+	</webResources>
+</configuration>

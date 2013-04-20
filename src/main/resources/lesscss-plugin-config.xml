@@ -1,0 +1,8 @@
+<configuration>
+	<sourceDirectory>${project.basedir}/src/main/webapp/resources/theme/less</sourceDirectory>
+	<outputDirectory>${project.build.directory}/${project.build.finalName}/resources/theme/css</outputDirectory>
+	<compress>true</compress>
+	<includes>
+		<include>main.less</include>
+	</includes>
+</configuration>

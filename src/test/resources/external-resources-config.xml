@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<resource>
+		<id>bootstrap</id>
+		<locations>
+			<location>
+				<name>bootstrap-sources.tar.gz</name>
+				<url>testresource:external/bootstrap-sources.tar.gz</url>
+				<filters>
+					<filter>
+						<pattern>.*/less/.*\.less</pattern>
+						<destination>src/main/webapp/resources/theme/less/bootstrap</destination>
+					</filter>
+				</filters>
+			</location>
+			<location>
+				<name>bootstrap-dist.zip</name>
+				<url>testresource:external/bootstrap-dist.zip</url>
+				<filters>
+					<filter>
+						<pattern>.*/js/.*\.js</pattern>
+						<destination>src/main/webapp/resources/theme/js</destination>
+					</filter>
+					<filter>
+						<pattern>.*/img/.*\.png</pattern>
+						<destination>src/main/webapp/resources/theme/img</destination>
+					</filter>
+				</filters>
+			</location>
+		</locations>
+	</resource>
+	<resource>
+		<id>jquery</id>
+		<locations>
+			<location>
+				<name>jquery.min.js</name>
+				<url>testresource:external/jquery-latest.min.js</url>
+				<filters>
+					<filter>
+						<pattern>.*\.js</pattern>
+						<destination>src/main/webapp/resources/theme/js</destination>
+					</filter>
+				</filters>
+			</location>
+		</locations>
+	</resource>
+</resources>

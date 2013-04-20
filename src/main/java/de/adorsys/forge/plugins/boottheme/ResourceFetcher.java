@@ -90,12 +90,14 @@ public class ResourceFetcher {
 		}
 		File downloadedFile = null;
 		for (Node location : resource.getSingle("locations").getChildren()) {
+			String name = null;
 			try {
-				downloadedFile = download(location.getSingle("name").getText(), location.getSingle("url").getText());
+				name = location.getSingle("name").getText();
+				downloadedFile = download(name, location.getSingle("url").getText());
 				copyAndFilter(downloadedFile, location.getSingle("filters").getChildren());
-				MsgHandler.success(shell, String.format("Fetched %s successfully", resourceId));
+				MsgHandler.success(shell, String.format("Fetched %s successfully", name));
 			} catch (IOException ex) {
-				MsgHandler.error(shell, String.format("Could not fetch resource '%s'", resourceId), ex);
+				MsgHandler.error(shell, String.format("Could not fetch resource '%s'", name), ex);
 				break;
 			} finally {
 				cleanUp(downloadedFile);

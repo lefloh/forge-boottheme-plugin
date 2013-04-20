@@ -48,7 +48,7 @@
 		<id>html5shiv</id>
 		<locations>
 			<location>
-				<name>html5shiv.min.js</name>
+				<name>html5shiv.zip</name>
 				<url>https://github.com/aFarkas/html5shiv/zipball/master</url>
 				<filters>
 					<filter>

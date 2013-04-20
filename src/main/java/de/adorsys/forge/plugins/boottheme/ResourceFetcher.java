@@ -93,7 +93,7 @@ public class ResourceFetcher {
 			String name = null;
 			try {
 				name = location.getSingle("name").getText();
-				downloadedFile = download(name, location.getSingle("url").getText());
+				downloadedFile = download(name, location.getSingle("url").getText());			
 				copyAndFilter(downloadedFile, location.getSingle("filters").getChildren());
 				MsgHandler.success(shell, String.format("Fetched %s successfully", name));
 			} catch (IOException ex) {
@@ -170,7 +170,7 @@ public class ResourceFetcher {
 	private void copyAndFilter(File file, List<Node> filters) throws IOException {
 		for (Node filter : filters) {
 			Pattern pattern = Pattern.compile(filter.getSingle("pattern").getText());
-			File destination = new File(project.getProjectRoot().getUnderlyingResourceObject(), filter.getSingle("destination").getText());
+			File destination = new File(project.getProjectRoot().getUnderlyingResourceObject(), filter.getSingle("destination").getText());;
 			if (file.isFile()) {
 				if (pattern.matcher(file.getAbsolutePath()).matches()) {
 					FileUtils.copyFileToDirectory(file, destination);

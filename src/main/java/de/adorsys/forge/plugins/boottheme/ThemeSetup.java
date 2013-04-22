@@ -123,7 +123,12 @@ public class ThemeSetup {
 			title = pom.getArtifactId();
 		}
 		velocityContext.put("title", title);
-		velocityContext.put("description", pom.getDescription());
+		String description = pom.getDescription();
+		if (description == null) {
+			description = "Your customized Bootstrap Theme";
+		}
+		velocityContext.put("description", description);
+		velocityContext.put("version", pom.getVersion());
 		return velocityContext;
 	}
 	

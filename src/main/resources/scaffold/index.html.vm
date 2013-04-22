@@ -37,7 +37,7 @@
 	</div>
 	
 	<div class="well">
-		<h1>${title} Theme</h1>
+		<h1>${title}-Theme &ndash; v${version}</h1>
 		<p class="lead">${description}</p>
 		TODO
 		* exclude empty or find useful description

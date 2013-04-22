@@ -27,42 +27,105 @@
     <![endif]-->
 </head>
 <body>
-
-	<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
 				<a class="brand" href="#">${title}</a>
+				<div class="nav-collapse collapse">
+					<p class="navbar-text pull-right">
+						Logged in as <a href="#" class="navbar-link">Username</a>
+					</p>
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-    </div>
-
-	<div class="container">
-   
-		<div class="hero-unit">
-			<h1>${title}-Theme</h1>
-			<p class="lead">${description}</p>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header">Sidebar</li>
+						<li class="active"><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="nav-header">Sidebar</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="nav-header">Sidebar</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="span9">
+				<div class="hero-unit">
+					<h1>${title}</h1>
+					<p>${description}</p>
+					<p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">
+						<h2>Getting started</h2>
+						<p>Build your HTML and customize the less-files in resources/theme/less</p>
+						<p><a class="btn" href="#">View details &raquo;</a></p>
+					</div>
+					<div class="span4">
+						<h2>Don't touch!</h2>
+						<p>Don't touch the files in resources/theme/less/bootstrap! They will be overwritten on the next update</p>
+						<p><a class="btn" href="#">View details &raquo;</a></p>
+					</div>
+					<div class="span4">
+						<h2>Like it responsive?</h2>
+						<p>Include resources/theme/less/responsive.less if you want to use the Bootstrap responsive features</p>
+						<p><a class="btn" href="#">View details &raquo;</a></p>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">
+						<h2>Development Mode</h2>
+						<p>For development the less files are compiled by <a href="http://www.lesscss.de/">less.js</a></p>
+						<p><a class="btn" href="#">View details &raquo;</a></p>
+					</div>
+					<div class="span4">
+						<h2>Production Mode</h2>
+						<p>Once you've finished just build the war with maven. The less files will be compiled with the <a href="https://github.com/marceloverdijk/lesscss-maven-plugin">lesscss-maven-plugin</a></p>
+						<p><a class="btn" href="#">View details &raquo;</a></p>
+					</div>
+					<div class="span4">
+						<h2>War Overlay</h2>
+						<p>Include the war in your application as a <a href="http://maven.apache.org/plugins/maven-war-plugin/overlays.html">war overlay</p>
+						<p><a class="btn" href="#">View details &raquo;</a></p>
+					</div>
+				</div>
+			</div>
 		</div>
-      
-		<h2>What's next?</h2>
-      
-		<ul>
-			<li>Build your HTML and customize the less-files in resources/theme/less</li>
-			<li>Don't touch the files in resources/theme/less/bootstrap! They will be overwritten on the next update</li>
-			<li>Include resources/theme/less/responsive.less if you want to use the Bootstrap responsive features</li>
-			<li>For development the less files are compiled by <a href="http://www.lesscss.de/">less.js</a></li>
-			<li>Once you've finished just build the war with maven. The less files will be compiled with the <a href="https://github.com/marceloverdijk/lesscss-maven-plugin">lesscss-maven-plugin</a></li>
-			<li>Include the war in your application as a <a href="http://maven.apache.org/plugins/maven-war-plugin/overlays.html">war overlay</a></li>
-			<li>Want to update bootstrap? Just use boottheme update</li>
-		</ul>
-	      
-		<hr />
-	      
+	
+		<hr>
+	
 		<footer>
 			<p>Version: ${version}</p>
 		</footer>
-      
-    </div>
 	
+	</div>
+
     <script src="resources/theme/js/jquery.min.js"></script>
     <!-- you won't need the less.min.js in production -->
     <script src="resources/theme/js/less.min.js"></script>

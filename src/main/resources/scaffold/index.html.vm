@@ -31,18 +31,37 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a href="#" class="brand">${title}</a>
+				<a class="brand" href="#">${title}</a>
 			</div>
 		</div>
-	</div>
-	
-	<div class="well">
-		<h1>${title}-Theme &ndash; v${version}</h1>
-		<p class="lead">${description}</p>
-		TODO
-		* exclude empty or find useful description
-		* run Python simple http server or mvn tomcat:run
-	</div>
+    </div>
+
+	<div class="container">
+   
+		<div class="hero-unit">
+			<h1>${title}-Theme</h1>
+			<p class="lead">${description}</p>
+		</div>
+      
+		<h2>What's next?</h2>
+      
+		<ul>
+			<li>Build your HTML and customize the less-files in resources/theme/less</li>
+			<li>Don't touch the files in resources/theme/less/bootstrap! They will be overwritten on the next update</li>
+			<li>Include resources/theme/less/responsive.less if you want to use the Bootstrap responsive features</li>
+			<li>For development the less files are compiled by <a href="http://www.lesscss.de/">less.js</a></li>
+			<li>Once you've finished just build the war with maven. The less files will be compiled with the <a href="https://github.com/marceloverdijk/lesscss-maven-plugin">lesscss-maven-plugin</a></li>
+			<li>Include the war in your application as a <a href="http://maven.apache.org/plugins/maven-war-plugin/overlays.html">war overlay</a></li>
+			<li>Want to update bootstrap? Just use boottheme update</li>
+		</ul>
+	      
+		<hr />
+	      
+		<footer>
+			<p>Version: ${version}</p>
+		</footer>
+      
+    </div>
 	
     <script src="resources/theme/js/jquery.min.js"></script>
     <!-- you won't need the less.min.js in production -->

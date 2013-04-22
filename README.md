@@ -60,7 +60,7 @@ Update your theme
 
 A new Version of Bootstrap is out?
 
-	boottheme update -- resource [bootstra|jquery|html5shiv]
+	boottheme update -- resource [bootstrap|jquery|html5shiv]
 	
 Show the used versions:
 
@@ -71,4 +71,5 @@ Notes
 
 * less.js is not working in Chrome using the file:// protocol. So use mvn tomcat:run or configure -allow-file-access-from-files.
 * If you update the plugin just will download the newest version of the resource regardless of which version is used. No VersionManagement by now!
+* The generated war will not include the less-files and the index.html. They are only needed for development.
  

@@ -4,5 +4,6 @@
 	<compress>true</compress>
 	<includes>
 		<include>main.less</include>
+		<include>responsive.less</include>
 	</includes>
 </configuration>

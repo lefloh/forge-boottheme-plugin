@@ -7,14 +7,20 @@
 <head>
     <meta charset="utf-8" />
 	<title>${title}</title>
-	<!-- 
-		the compiled css - production-mode
-    	<link href="resources/theme/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    -->
-    <!--
+	<!--
     	compile the css via lessjs - dev-mode
     -->
     	<link href="resources/theme/less/main.less" rel="stylesheet/less" type="text/css" />
+    <!--
+    	include responsive.less if you want to use the responsive-features - dev-mode
+    	<link href="resources/theme/less/responsive.less" rel="stylesheet/less" type="text/css" />	
+    -->
+    <!-- 
+		hint: in production include the the compiled css
+    	<link href="resources/theme/css/main.css" rel="stylesheet" type="text/css" />
+    	and if you like:
+    	<link href="resources/theme/css/responsive.css" rel="stylesheet" type="text/css" />
+    -->
     
     <!--[if lt IE 9]>
     	<script src="resources/theme/js/html5shiv.js"></script>

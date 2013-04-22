@@ -1,11 +1,3 @@
 <configuration>
-	<webResources>
-		<resource>
-			<excludes>
-				<exlude>**/less.min.js</exlude>
-				<exlude>**/*.less</exlude>
-				<exlude>**/index.html</exlude>
-			</excludes>
-		</resource>
-	</webResources>
+	<packagingExcludes>index.html,resources/theme/less/**,resources/theme/js/less.min.js</packagingExcludes>
 </configuration>

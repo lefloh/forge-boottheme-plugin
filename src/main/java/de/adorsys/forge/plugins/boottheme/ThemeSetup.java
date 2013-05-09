@@ -21,6 +21,7 @@ import java.io.StringWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
@@ -31,6 +32,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.maven.model.Build;
 import org.apache.maven.model.Model;
 import org.apache.maven.model.Plugin;
 import org.apache.maven.model.PluginExecution;
@@ -138,6 +140,13 @@ public class ThemeSetup {
 	private void configurePom() {
 		MavenCoreFacet mavenCoreFacet = project.getFacet(MavenCoreFacet.class);
 		Model pom = mavenCoreFacet.getPOM();
+
+		if (pom.getBuild() == null) {
+			pom.setBuild(new Build());
+		}
+		if (pom.getBuild().getPlugins() == null) {
+			pom.getBuild().setPlugins(new ArrayList<Plugin>());
+		}
 		List<Plugin> plugins = pom.getBuild().getPlugins();
 		
 		try {
@@ -154,7 +163,7 @@ public class ThemeSetup {
 		mavenCoreFacet.setPOM(pom);
 		MsgHandler.success(shell, "configured pom.xml");
 	}
-	
+
 	private void addLessPlugin(List<Plugin> plugins) throws XmlPullParserException, IOException {
 		Plugin plugin = new Plugin();
 		plugin.setGroupId("org.lesscss");
@@ -186,6 +195,14 @@ public class ThemeSetup {
 			}
 		}
 
+		if (warPlugin == null) {
+			warPlugin = new Plugin();
+			warPlugin.setGroupId("org.apache.maven.plugins");
+			warPlugin.setArtifactId("maven-war-plugin");
+			warPlugin.setVersion("2.3");
+			plugins.add(warPlugin);
+		}
+		
 		InputStream config = Thread.currentThread().getContextClassLoader().getResourceAsStream("war-plugin-config.xml");
 		Xpp3Dom existingConfig = (Xpp3Dom) warPlugin.getConfiguration();
 		Xpp3Dom mergedConfig = Xpp3DomUtils.mergeXpp3Dom(Xpp3DomBuilder.build(config, "UTF-8"), existingConfig);

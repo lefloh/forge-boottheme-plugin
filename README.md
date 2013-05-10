@@ -10,6 +10,10 @@ Install Boottheme Plugin
 
 Install and start jboss forge. In the forge shell type:
 
+	forge install-plugin boottheme
+
+or
+
 	forge git-plugin git://github.com/lefloh/forge-boottheme-plugin.git
 
 Setup your theme

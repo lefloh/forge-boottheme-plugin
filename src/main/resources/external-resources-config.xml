@@ -5,7 +5,7 @@
 		<locations>
 			<location>
 				<name>bootstrap-sources.tar.gz</name>
-				<url>https://github.com/twitter/bootstrap/tarball/master</url>
+				<url>https://github.com/twbs/bootstrap/tarball/master</url>
 				<filters>
 					<filter>
 						<pattern>.*/less/.*\.less</pattern>

@@ -16,6 +16,15 @@ or
 
 	forge git-plugin git://github.com/lefloh/forge-boottheme-plugin.git
 
+Bootstrap 2.3 vs 3.0
+--------------------
+
+The plugin is using Bootstrap 3.0.x now. There are a lot of changes so [learn how to upgrade from 2.3.x](http://getbootstrap.com/getting-started/#migration).
+If you wanna stay with bootstrap 2.3.x checkout branch ```bootstrap-2.3.2```. This branch is pinned to bootstrap 2.3.2 and won't update bootstrap any more.
+
+    forge git-plugin git://github.com/lefloh/forge-boottheme-plugin.git --ref bootstrap-2.3.2 
+
+
 Setup your theme
 ----------------
 
@@ -32,9 +41,11 @@ After that your project should look like this:
 	            ├── index.html
 	            └── resources
 	                └── theme
-	                    ├── img
-	                    │   ├── glyphicons-halflings-white.png
-	                    │   └── glyphicons-halflings.png
+                        ├── fonts
+                        │   ├── glyphicons-halflings-regular.eot
+                        │   ├── glyphicons-halflings-regular.svg
+                        │   ├── glyphicons-halflings-regular.ttf
+                        │   └── glyphicons-halflings-regular.woff
 	                    ├── js
 	                    │   ├── bootstrap.js
 	                    │   ├── bootstrap.min.js
@@ -43,11 +54,10 @@ After that your project should look like this:
 	                    │   └── less.min.js
 	                    └── less
 	                        ├── bootstrap
-	                        │   ├── accordion.less
+	                        │   ├── alert.less
 	     					│	...
 	     					├── bootstrap-customization.less
     	                    ├── main.less
-     	                    ├── responsive.less
      	                    └── variables.less
      	 
 Customize your theme

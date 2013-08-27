@@ -100,9 +100,7 @@ public class BootthemePlugin implements Plugin {
 				String content = IOUtils.toString(file.toURI().toURL());
 				Matcher matcher = pattern.matcher(content);
 				if (matcher.find()) {
-					String lib = file.getName().split("\\.")[0];
-					String version = matcher.group(1);
-					versions.append(String.format("* %s: %s\n", lib, version));
+					versions.append(String.format("* %s: %s\n", file.getName(), matcher.group(1)));
 				}
 			} catch (Exception ex) {
 				MsgHandler.error(shell, "Could not parse Versions", ex);

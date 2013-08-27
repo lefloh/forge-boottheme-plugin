@@ -148,6 +148,9 @@ public class ResourceFetcher {
 				inputStream.close();
 			}
 		}
+		if (unzippedDir.listFiles().length == 0) {
+			MsgHandler.warn(shell, String.format("Downloaded file '%s' was empty!", file.getAbsolutePath()));
+		}
 		return unzippedDir;
 	}
 	

@@ -2,7 +2,7 @@ forge-boottheme-plugin
 ======================
 
 Wanna use [Bootstrap](http://twitter.github.io/bootstrap/) but wanna have an &raquo;own look&laquo;? This plugin helps you building your own Bootstrap Theme.
-It's inspired by [Bootswatch Swatchmaker](https://github.com/thomaspark/bootswatch/tree/gh-pages/swatchmaker) 
+It's inspired by [Bootswatch](https://github.com/thomaspark/bootswatch/) 
 but based on [JBoss Forge](http://forge.jboss.org/) and [Apache Maven](http://maven.apache.org/). 
 
 Install Boottheme Plugin

@@ -41,11 +41,11 @@ After that your project should look like this:
 	            ├── index.html
 	            └── resources
 	                └── theme
-                        ├── fonts
-                        │   ├── glyphicons-halflings-regular.eot
-                        │   ├── glyphicons-halflings-regular.svg
-                        │   ├── glyphicons-halflings-regular.ttf
-                        │   └── glyphicons-halflings-regular.woff
+	                    ├── fonts
+	                    │   ├── glyphicons-halflings-regular.eot
+	                    │   ├── glyphicons-halflings-regular.svg
+	                    │   ├── glyphicons-halflings-regular.ttf
+	                    │   └── glyphicons-halflings-regular.woff
 	                    ├── js
 	                    │   ├── bootstrap.js
 	                    │   ├── bootstrap.min.js
